@@ -207,18 +207,26 @@
 
     <!-- Filters perfectly centered -->
     <section class="filters">
-      <div class="filters-inner">
-        <div class="field">
-          <label>Year</label>
-          <input type="text">
-        </div>
-        <div class="field">
-          <label>Branch</label>
-          <input type="text">
-        </div>
-        <button class="select-btn">Select</button>
-      </div>
-    </section>
+  <div class="filters-inner">
+    <div class="field">
+      <label>Year</label>
+      <input type="text">
+    </div>
+    <div class="field">
+      <label>Branch</label>
+      <select id="branchSelect">
+        <option value="">-- Select Branch --</option>
+        <option value="JAMNAGAR">JAMNAGAR</option>
+        <option value="DARED">DARED</option>
+        <option value="KOLKATA">KOLKATA</option>
+        <option value="MUMBAI">MUMBAI</option>
+        <option value="DELHI">DELHI</option>
+      </select>
+    </div>
+    <button class="select-btn">Select</button>
+  </div>
+</section>
+
 
     <!-- Content placeholder -->
     <div class="content">
