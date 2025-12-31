@@ -1,206 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Booking</title>
-  <style>
-    /* RESET & GLOBAL STYLES */
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
+<meta charset="UTF-8">
+<title>Booking</title>
 
-    * {
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+/* RESET */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  background: #f0f0f0;
+}
 
-    body {
-      background: #f0f0f0;
-    }
-
-    /* FULL SCREEN APP CONTAINER */
-    .app {
-      min-height: 100vh;
-      width: 100%;
-      background: white;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* TOPBAR - identical to first page */
-    .topbar {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      border-bottom: 3px solid #000;
-      padding: 10px 15px;   /* same as first page */
-      position: sticky;
-      top: 0;
-      background: white;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-weight: bold;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .nav button, .drop-btn {
-      background: none;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .nav button:hover,
-    .drop-btn:hover {
-      background-color: #eaeaea;
-      border-radius: 2px;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .drop-menu {
-      position: absolute;
-      top: 35px;
-      left: 0;
-      border: 2px solid #000;
-      background: #fff;
-      display: none;
-      flex-direction: column;
-      min-width: 160px;
-      z-index: 100;
-    }
-
-    .drop-menu.right {
-      left: auto;
-      right: 0;
-    }
-
-    .drop-menu div {
-      padding: 8px 12px;
-      border-bottom: 1px solid #000;
-      cursor: pointer;
-    }
-
-    .drop-menu div:last-child {
-      border-bottom: none;
-    }
-
-    .dropdown:hover .drop-menu {
-      display: flex;
-    }
-
-    .drop-menu div:hover {
-      background-color: #f0f0f0;
-    }
-
-    .nav-link {
-      text-decoration: none;
-      color: inherit;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .nav-link:hover {
-      background-color: #eaeaea;
-      border-radius: 2px;
-    }
-
-    .spacer {
-      width: 60px;
-    }
-
-    /* BOOKING GRID LAYOUT */
-    .booking-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 220px;
-      gap: 20px;
-      margin-top: 40px;
-      padding: 0 15px; /* small padding to match first page */
-    }
-
-    /* FORMS */
-    .booking-form {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .booking-form input {
-      padding: 5px;
-      width: 100%;
-    }
-
-    .small {
-      width: 80px;
-    }
-
-    /* PAYMENT BOX */
-    .payment-box {
-      border-left: 2px solid #000;
-      padding-left: 15px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-
-    .payment-box input {
-      width: 100%;
-      padding: 5px;
-    }
-
-    .payment-box h4 {
-      margin: 5px 0;
-      font-size: 14px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .full {
-      width: 100%;
-    }
-
-    .actions {
+.app {
+  min-height: 100vh;
+  background: white;
   display: flex;
-  justify-content: center; /* center the buttons horizontally */
-  gap: 55px;               /* space between buttons */
-  margin: 20px 0;          /* spacing from booking grid */
+  flex-direction: column;
+}
+
+/* TOPBAR */
+.topbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  border-bottom: 3px solid #000;
+  padding: 10px 15px;
+  background: white;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav button, .drop-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.nav button:hover,
+.drop-btn:hover {
+  background: #eaeaea;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.drop-menu {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  border: 2px solid #000;
+  background: #fff;
+  display: none;
+  min-width: 160px;
+}
+
+.dropdown:hover .drop-menu {
+  display: block;
+}
+
+.drop-menu div {
+  padding: 8px;
+  border-bottom: 1px solid #000;
+  cursor: pointer;
+}
+
+.drop-menu div:hover {
+  background: #f0f0f0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+/* TITLE BAR */
+.form-title {
+  border-bottom: 2px solid #000;
+  text-align: center;
+  font-weight: bold;
+  padding: 6px;
+  margin: 10px;
+}
+
+/* BOOKING GRID */
+.booking-wrapper {
+  padding: 15px;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 260px;
+  gap: 20px;
+}
+
+/*FORM SECTIONS*/
+.form-section {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.form-section input {
+  padding: 5px;
+  width: 220px;   /* textbox size */
+}
+
+.small {
+  width: 80px;
+}
+
+/* RIGHT PAYMENT BOX */
+.payment-box {
+  border-left: 2px solid #000;
+  padding-left: 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.payment-box h4 {
+  margin: 5px 0;
+  text-align: center;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 4px;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px 0;
 }
 
 .actions button {
-  padding: 15px 16px;
-  font-size: 14px;
+  width: 110px;
+  height: 35px;
   cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  transition: background 0.2s;
 }
 
-.actions button:hover {
-  background-color: #0056b3;
+.booking-body {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 0.8fr;
+  padding: 20px;
+  column-gap: 25px;
+}
+
+/* columns */
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* row layout */
+.row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  align-items: center;
+  margin-bottom: 12px;   /* normal gap */
+}
+
+.row.tight {
+  margin-bottom: 4px;   
+}
+
+.row.small-gap {
+  margin-bottom: 8px;
+}
+
+/* spacing blocks */
+.big-gap {
+  height: 40px;         
+}
+
+/* inputs */
+input {
+  width: 210px;
+  padding: 5px;
+}
+
+input.small {
+  width: 80px;
+}
+
+/* right side fee box */
+.fee-box {
+  border: 2px solid #000;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.fee-title {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 
-  </style>
+</style>
 </head>
-<body>
 
+<body>
 <div class="app">
 
-  <!-- TOPBAR - identical style -->
-  <header class="topbar">
+<header class="topbar">
       <div class="logo">LOGO</div>
       <nav class="nav">
         <div class="dropdown">
@@ -238,89 +262,124 @@
       <div class="spacer"></div>
     </header>
 
-  <!-- BOOKING GRID -->
-  <div class="booking-grid">
+<!-- FORM -->
+<div class="booking-body">
 
-    <!-- LEFT -->
-    <div class="booking-form">
+  <!-- LEFT COLUMN -->
+  <div class="col left">
+    <div class="row">
       <label>Branch From</label>
-      <input type="text" id="branchFrom" value="" readonly>
+        <input type="text" id="branchFrom" value="" readonly>
+    </div>
 
+    <div class="row small-gap">
       <label>Branch To</label>
-      <input type="text">
+      <input>
+    </div>
 
+    <div class="big-gap"></div>
+
+    <div class="row">
       <label>B-Pay Mode</label>
-      <input type="text">
+      <input>
+    </div>
 
+    <div class="row">
       <label>Sender / C</label>
-      <input type="text">
+      <input>
+    </div>
 
+    <div class="row">
       <label>Receiver</label>
-      <input type="text">
+      <input>
+    </div>
 
+    <div class="row">
       <label>Content</label>
-      <input type="text">
+      <input>
+    </div>
 
+    <div class="row">
       <label>Packages</label>
-      <input type="number" class="small">
+      <input class="small">
+    </div>
 
+    <div class="row">
       <label>Weight in KG</label>
-      <input type="number" class="small">
+      <input class="small">
     </div>
-
-    <!-- MIDDLE -->
-    <div class="booking-form">
-      <label>Pickup From</label>
-      <input type="text">
-
-      <label>Delivery To</label>
-      <input type="text">
-
-      <label>Date</label>
-      <input type="date">
-
-      <label>Mobile No.</label>
-      <input type="text">
-
-      <label>PKG Detail</label>
-      <input type="text">
-    </div>
-
-    <!-- RIGHT -->
-    <div class="payment-box">
-      <label>L. R. No</label>
-      <input type="text" class="full">
-
-      <h4>Booking Fee</h4>
-
-      <label>Freight</label>
-      <input type="text">
-
-      <label>Door del</label>
-      <input type="text">
-
-      <label>Total</label>
-      <input type="text">
-    </div>
-
   </div>
 
-    <!-- BOOKING GRID -->
-<div class="booking-grid">
+  <!-- MIDDLE COLUMN -->
+  <div class="col middle">
+    <div class="row tight">
+      <label>Pickup From</label>
+      <input>
+    </div>
+
+    <div class="row tight">
+      <label>Delivery To</label>
+      <input>
+    </div>
+
+    <div class="big-gap"></div>
+
+    <div class="row">
+      <label>Mobile No.</label>
+      <input>
+    </div>
+
+    <div class="row">
+      <label>PKG Detail</label>
+      <input>
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="col right">
+    <div class="row">
+      <label>Date</label>
+      <input class="small">
+    </div>
+
+    <div class="row">
+      <label>L. R. No</label>
+      <input>
+    </div>
+
+    <div class="fee-box">
+      <div class="fee-title">Booking Fee</div>
+
+      <div class="row">
+        <label>Freight</label>
+        <input class="small">
+      </div>
+
+      <div class="row">
+        <label>Door del</label>
+        <input>
+      </div>
+
+      <div class="row">
+        <label>Total</label>
+        <input>
+      </div>
+    </div>
+  </div>
+
 </div>
 
-<!-- ACTION BUTTONS -->
+
+<!-- ACTIONS -->
 <div class="actions">
-  <button>Add Booking</button>
-  <button>Edit Booking</button>
-  <button>Delete Booking</button>
+  <button>Add</button>
+  <button>Edit</button>
+  <button>Delete</button>
   <button>Print</button>
   <button>Reset</button>
 </div>
 
-
 </div>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
