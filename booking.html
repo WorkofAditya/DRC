@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ONLY layout helpers – no heavy borders */
+
+.payment-box h4 {
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center; 
+}
+
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 220px; /* slightly smaller */
+  gap: 20px;
+  margin-top: 10px;  /* reduced */
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.booking-form input {
+  padding: 5px;
+  width: 100%;     /* IMPORTANT */
+}
+
+.small {
+  width: 80px;
+}
+
+.payment-box {
+  border-left: 2px solid #000;
+  padding-left: 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.payment-box input {
+  width: 100%;     /* IMPORTANT */
+  padding: 5px;
+}
+
+.payment-box h4 {
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.full {
+  width: 100%;
+}
+
+
+  </style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SAME HEADER -->
+  <header class="topbar">
+  <div class="logo">LOGO</div>
+  <nav class="nav">
+    <div class="dropdown">
+  <button class="drop-btn">Employ</button>
+  <div class="drop-menu">
+    <div>Data entry</div>
+    <div>Employ Data</div>
+    <div>Salary slip</div>
+  </div>
+</div>
+    <div class="dropdown">
+  <button class="drop-btn">Driver</button>
+  <div class="drop-menu">
+    <div>Data entry</div>
+    <div>Payment slip</div>
+    <div>Driver Data</div>
+  </div>
+</div>
+
+    <button>Booking</button>
+    <button>Dispatch</button>
+    <button>Summary</button>
+   <div class="dropdown">
+  <button class="drop-btn">Menu</button>
+  <div class="drop-menu right">
+    <div>Booking</div>
+    <div>Dispatch</div>
+    <div>Godown Stock</div>
+    <div>Consignor Data</div>
+    <div>Consignee Data</div>
+  </div>
+</div>
+  </nav>
+  <div class="spacer"></div>
+</header>
+
+  <div class="booking-title">Booking From</div>
+
+  <div class="booking-grid">
+
+    <!-- LEFT -->
+    <div class="booking-form">
+      <label>Branch From</label>
+      <input type="text" value="Jamnagar">
+
+      <label>Branch To</label>
+      <input type="text">
+
+      <label>B-Pay Mode</label>
+      <input type="text">
+
+      <label>Sender / C</label>
+      <input type="text">
+
+      <label>Receiver</label>
+      <input type="text">
+
+      <label>Content</label>
+      <input type="text">
+
+      <label>Packages</label>
+      <input type="number" class="small">
+
+      <label>Weight in KG</label>
+      <input type="number" class="small">
+    </div>
+
+    <!-- MIDDLE -->
+    <div class="booking-form">
+      <label>Pickup From</label>
+      <input type="text">
+
+      <label>Delivery To</label>
+      <input type="text">
+
+      <label>Date</label>
+      <input type="date">
+
+      <label>Mobile No.</label>
+      <input type="text">
+
+      <label>PKG Detail</label>
+      <input type="text">
+    </div>
+
+    <!-- RIGHT -->
+    <div class="payment-box">
+      <label>L. R. No</label>
+      <input type="text" class="full">
+
+      <h4>Booking Fee</h4>
+
+      <label>Freight</label>
+      <input type="text">
+
+      <label>Door del</label>
+      <input type="text">
+
+      <label>Total</label>
+      <input type="text">
+    </div>
+
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transport Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <header class="topbar">
+  <div class="logo">LOGO</div>
+  <nav class="nav">
+    <div class="dropdown">
+  <button class="drop-btn">Employ</button>
+  <div class="drop-menu">
+    <div>Data entry</div>
+    <div>Employ Data</div>
+    <div>Salary slip</div>
+  </div>
+</div>
+    <div class="dropdown">
+  <button class="drop-btn">Driver</button>
+  <div class="drop-menu">
+    <div>Data entry</div>
+    <div>Payment slip</div>
+    <div>Driver Data</div>
+  </div>
+</div>
+
+    <a href="booking.html" class="nav-link">Booking</a>
+    <button>Dispatch</button>
+    <button>Summary</button>
+   <div class="dropdown">
+  <button class="drop-btn">Menu</button>
+  <div class="drop-menu right">
+    <div>Booking</div>
+    <div>Dispatch</div>
+    <div>Godown Stock</div>
+    <div>Consignor Data</div>
+    <div>Consignee Data</div>
+  </div>
+</div>
+  </nav>
+  <div class="spacer"></div>
+</header>
+
+
+    <section class="filters">
+      <div class="field">
+        <label>Year</label>
+        <input type="text">
+      </div>
+      <div class="field">
+        <label>Branch</label>
+        <input type="text">
+      </div>
+      <button class="select-btn">Select</button>
+    </section>
+
+    <section class="content">
+      <div class="left">
+
+        <div class="checkbox">
+          <input type="checkbox">
+          <span>Paid / ToPay / A/C</span>
+        </div>
+
+        <div class="form">
+          <label>Sender / C</label>
+          <input type="text">
+
+          <label>Receiver</label>
+          <input type="text">
+
+          <label>Mobile No.</label>
+          <input type="text">
+
+          <label>Packages</label>
+          <input type="number">
+
+          <label>KG</label>
+          <input type="number">
+
+          <label>Per KG rate</label>
+          <input type="number">
+
+          <label>AMT</label>
+          <input type="number">
+
+          <label>Final Amt</label>
+          <input type="number">
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="actions">
+      <button>Edit</button>
+      <button>Add</button>
+      <button>Delete</button>
+      <button>Preview</button>
+      <button>Print</button>
+      <button>Exit</button>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
