@@ -180,3 +180,85 @@ input.small {
     margin-bottom: 4px;
   }
 }
+
+/* ================= PRINT LAYOUT ================= */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #printArea,
+  #printArea * {
+    visibility: visible;
+  }
+
+  #printArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.print-page {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.receipt {
+  width: 48%;
+  border: 2px solid #000;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.receipt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.receipt-header .logo {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.receipt-header .meta {
+  text-align: right;
+}
+
+.receipt-header .meta div {
+  margin-bottom: 4px;
+}
+
+.route {
+  margin: 10px 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.field {
+  display: flex;
+  margin: 4px 0;
+}
+
+.field span:first-child {
+  width: 90px;
+}
+
+.to-pay {
+  margin-top: 10px;
+  font-weight: bold;
+  color: darkred;
+}
+
+.signature {
+  margin-top: 25px;
+  text-align: center;
+  border-top: 1px solid #000;
+  padding-top: 5px;
+  font-weight: bold;
+}
