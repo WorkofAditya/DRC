@@ -55,32 +55,32 @@
       </div>
       <div class="row small-gap">
         <label>Branch To</label>
-        <input type="text">
+        <input type="text" id="branchTo">
       </div>
       <div class="big-gap"></div>
       <div class="row">
         <label>B-Pay Mode</label>
-        <input type="text">
+        <input type="text" id="payMode">
       </div>
       <div class="row">
         <label>Sender / C</label>
-        <input type="text">
+        <input type="text" id="sender">
       </div>
       <div class="row">
         <label>Receiver</label>
-        <input type="text">
+        <input type="text" id="receiver">
       </div>
       <div class="row">
         <label>Content</label>
-        <input type="text">
+        <input type="text" id="content">
       </div>
       <div class="row">
         <label>Packages</label>
-        <input type="number" class="small">
+        <input type="number" class="small" id="packages">
       </div>
       <div class="row">
         <label>Weight in KG</label>
-        <input type="number" class="small">
+        <input type="number" class="small" id="weight">
       </div>
     </div>
 
@@ -88,20 +88,20 @@
     <div class="col middle">
       <div class="row tight">
         <label>Pickup From</label>
-        <input type="text">
+        <input type="text" id="pickupFrom">
       </div>
       <div class="row tight">
         <label>Delivery To</label>
-        <input type="text">
+        <input type="text" id="deliveryTo">
       </div>
       <div class="big-gap"></div>
       <div class="row">
         <label>Mobile No.</label>
-        <input type="text">
+        <input type="text" id="mobile">
       </div>
       <div class="row">
         <label>PKG Detail</label>
-        <input type="text">
+        <input type="text" id="pkgDetail">
       </div>
     </div>
 
@@ -109,25 +109,25 @@
     <div class="col right">
       <div class="row">
         <label>Date</label>
-        <input type="date" class="small">
+        <input type="date" class="small" id="bookingDate">
       </div>
       <div class="row">
         <label>L. R. No</label>
-        <input type="text">
+        <input type="text" id="lrNo" readonly>
       </div>
       <div class="fee-box">
         <div class="fee-title">Booking Fee</div>
         <div class="row">
           <label>Freight</label>
-          <input type="number" class="small">
+          <input type="number" class="small" id="freight">
         </div>
         <div class="row">
           <label>Door del</label>
-          <input type="number">
+          <input type="number" id="doorDelivery">
         </div>
         <div class="row">
           <label>Total</label>
-          <input type="number">
+          <input type="number" id="total">
         </div>
       </div>
     </div>
@@ -147,6 +147,15 @@
 
 
 </div>
+
+<!-- PRINT LAYOUT -->
+<div id="printArea" style="display:none">
+  <div class="print-page">
+    <div class="receipt" id="receiptLeft"></div>
+    <div class="receipt" id="receiptRight"></div>
+  </div>
+</div>
+
 <script src="app.js"></script>
 </body>
 </html>
