@@ -65,24 +65,38 @@ function initBookingPage() {
 
 // ================= LOCK / UNLOCK =================
 function lockForm() {
-  document.querySelectorAll(".booking-body input").forEach(i => {
-    if (i.id !== "branchFrom") i.readOnly = true;
-  });
+  document
+    .querySelectorAll(".booking-body input, .booking-body select")
+    .forEach(el => {
+      if (el.id !== "branchFrom") {
+        el.tagName === "SELECT"
+          ? (el.disabled = true)
+          : (el.readOnly = true);
+      }
+    });
 }
 
 function unlockForm() {
-  document.querySelectorAll(".booking-body input").forEach(i => {
-    if (i.id !== "branchFrom") i.readOnly = false;
-  });
+  document
+    .querySelectorAll(".booking-body input, .booking-body select")
+    .forEach(el => {
+      if (el.id !== "branchFrom") {
+        el.tagName === "SELECT"
+          ? (el.disabled = false)
+          : (el.readOnly = false);
+      }
+    });
 }
+
 
 // ================= NEW BOOKING =================
 function newBooking() {
   isNewBooking = true;
   unlockForm();
 
-  document.querySelectorAll(".booking-body input").forEach(input => {
-    if (input.id !== "branchFrom") input.value = "";
+  document.querySelectorAll(".booking-body input, .booking-body select")
+  .forEach(el => {
+    if (el.id !== "branchFrom") el.value = "";
   });
 
   const lr = document.getElementById("lrNo");
@@ -94,8 +108,9 @@ function newBooking() {
 // ================= SAVE BOOKING =================
 function saveData(branch) {
   const booking = {};
-  document.querySelectorAll(".booking-body input").forEach(input => {
-    if (input.id) booking[input.id] = input.value.trim();
+  document.querySelectorAll(".booking-body input, .booking-body select")
+  .forEach(el => {
+    if (el.id) booking[el.id] = el.value.trim();
   });
 
   booking.branchFrom = branch;
@@ -157,8 +172,8 @@ function loadLatestBooking(branch) {
     const data = bookings[lastLR];
 
     Object.keys(data).forEach(id => {
-      const input = document.getElementById(id);
-      if (input) input.value = data[id];
+    const el = document.getElementById(id);
+    if (el) el.value = data[id];
     });
 
     lockForm();
