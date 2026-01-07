@@ -21,18 +21,33 @@ html, body {
 
 /* Topbar */
 .topbar {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  height: 52px;
   border-bottom: 3px solid #000;
-  padding: 10px 15px;
   background: #fff;
+  position: relative;
+}
+
+.topbar .logo {
+  position: absolute;
+  left: 16px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.topbar .title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .logo {
   font-weight: bold;
 }
 
+/*
 .nav {
   display: flex;
   justify-content: center;
@@ -89,7 +104,7 @@ html, body {
 .nav-link {
   text-decoration: none;
   color: black;
-}
+}*/
 
 /* Booking body with original column layout */
 .booking-body {
@@ -261,4 +276,9 @@ input.small {
   border-top: 1px solid #000;
   padding-top: 5px;
   font-weight: bold;
+}
+
+.booking-body select {
+  width: 210px;        
+  max-width: 100%;
 }
